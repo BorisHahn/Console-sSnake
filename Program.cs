@@ -7,18 +7,46 @@ namespace Console_sSnake
     {
         static void Main(string[] args)
         {
+            const float targetFrameTime = 1f / 60f;
             SnakeGameLogic gameLogic = new SnakeGameLogic();
-            ConsoleInput input = new ConsoleInput();
+            
+            var pallete = gameLogic.CreatePallet();
+
+            var renderer0 = new ConsoleRenderer(pallete);
+            var renderer1 = new ConsoleRenderer(pallete);
+
+            var input = new ConsoleInput();
             gameLogic.InitializeInput(input);
+
+            var prevRenderer = renderer0;
+            var currRenderer = renderer1;
             var lastFrameTime = DateTime.Now;
-            gameLogic.GotoGameplay();
             while (true)
             {
-                input.Update();
                 var frameStartTime = DateTime.Now;
                 var deltaTime = (float)(frameStartTime - lastFrameTime).TotalSeconds;
-                gameLogic.Update(deltaTime);
+
+                input.Update();
+                
+                gameLogic.DrawNewState(deltaTime, currRenderer);
                 lastFrameTime = frameStartTime;
+
+                if (currRenderer != prevRenderer)
+                {
+                    currRenderer.Render();
+                }
+
+                var tmp = prevRenderer;
+                prevRenderer = currRenderer;
+                currRenderer = tmp;
+                currRenderer.Clear();
+
+                var nextFrameTime = frameStartTime + TimeSpan.FromSeconds(targetFrameTime);
+                var endFrameTime = DateTime.Now;
+                if (nextFrameTime > endFrameTime)
+                {
+                    Thread.Sleep((int)(nextFrameTime - endFrameTime).TotalMilliseconds);
+                }
             }
         }
     }

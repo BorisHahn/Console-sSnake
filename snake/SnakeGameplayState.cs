@@ -15,9 +15,12 @@ namespace Console_sSnake.snake
 {
     public class SnakeGameplayState : BaseGameState
     {
-        private SnakeDir _currentDir = SnakeDir.Right;
+        const char snakeSymbol = '■';
+        private SnakeDir currentDir = SnakeDir.Right;
         private float _timeToMove = 0f;
         private List<Cell> _body = new();
+        public int fieldWidth;
+        public int fieldHeight;
         private struct Cell
         {
             public int X;
@@ -32,18 +35,18 @@ namespace Console_sSnake.snake
 
         public void SetDirection(SnakeDir dir)
         {
-            _currentDir = dir;
+            currentDir = dir;
         }
 
-        private Cell ShiftTo(SnakeDir dir, Cell curCell)
+        private Cell ShiftTo(Cell curCell, SnakeDir dir)
         {
             switch (dir)
             {
                 case SnakeDir.Up:
-                    return new Cell(curCell.X, curCell.Y + 1);
+                    return new Cell(curCell.X, curCell.Y - 1);
                     break;
                 case SnakeDir.Down:
-                    return new Cell(curCell.X, curCell.Y - 1);
+                    return new Cell(curCell.X, curCell.Y + 1);
                     break;
                 case SnakeDir.Left:
                     return new Cell(curCell.X - 1, curCell.Y);
@@ -57,25 +60,33 @@ namespace Console_sSnake.snake
         public override void Reset()
         {
             _body.Clear();
-            _currentDir = SnakeDir.Right;
-            _body.Add(new Cell(0, 0));
+            var middleY = fieldHeight / 2;
+            var middleX = fieldWidth / 2;
+            currentDir = SnakeDir.Right;
+            _body.Add(new Cell(middleX + 3, middleY));
             _timeToMove = 0f;
         }
 
         public override void Update(float deltaTime)
         {
-
             _timeToMove -= deltaTime;
-            if (_timeToMove > 0)
+            if (_timeToMove > 0f)
                 return;
-            else
-                _timeToMove = 1f / 5;
+            
+            _timeToMove = 1f / 5;
+            var head = _body[0];
+            var nextCell = ShiftTo(head, currentDir);
 
-            Cell head = _body[0];
-            Cell nextCell = ShiftTo(_currentDir, head);
             _body.RemoveAt(_body.Count - 1);
             _body.Insert(0, nextCell);
-            Console.WriteLine($"_body_X {_body[0].X}, _body_Y {_body[0].Y}");
+        }
+
+        public override void Draw(ConsoleRenderer renderer)
+        {
+            foreach (var item in _body)
+            {
+                renderer.SetPixel(item.X, item.Y, snakeSymbol, 1);
+            }
         }
     }
 }
