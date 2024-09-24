@@ -12,7 +12,10 @@ namespace Console_sSnake.snake
         SnakeGameplayState gameplayState = new SnakeGameplayState();
         public override void Update(float deltaTime)
         {
-            gameplayState.Update(deltaTime);
+            if (currentState != gameplayState)
+            {
+                GotoGameplay();
+            }
         }
 
         public override void OnArrowUp()
@@ -61,7 +64,12 @@ namespace Console_sSnake.snake
 
         public override ConsoleColor[] CreatePallet()
         {
-            return [ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Blue, ConsoleColor.Yellow];
+            return [
+                ConsoleColor.Red, 
+                ConsoleColor.Green, 
+                ConsoleColor.Blue, 
+                ConsoleColor.Yellow
+                ];
         }
     }
 }

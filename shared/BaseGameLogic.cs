@@ -30,7 +30,7 @@ namespace Console_sSnake.shared
 
         public void ChangeState(BaseGameState baseGameState)
         {
-            currentState.Reset();      
+            currentState?.Reset();      
             currentState = baseGameState;
         }
 

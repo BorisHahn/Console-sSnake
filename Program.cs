@@ -5,9 +5,9 @@ namespace Console_sSnake
 {
     internal class Program
     {
+        const float targetFrameTime = 1f / 60f;
         static void Main(string[] args)
         {
-            const float targetFrameTime = 1f / 60f;
             SnakeGameLogic gameLogic = new SnakeGameLogic();
             
             var pallete = gameLogic.CreatePallet();
