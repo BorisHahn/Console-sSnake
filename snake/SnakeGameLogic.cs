@@ -56,8 +56,8 @@ namespace Console_sSnake.snake
 
         public void GotoGameplay()
         {
-            gameplayState.fieldWidth = _screenWidth;
-            gameplayState.fieldHeight = _screenHeight;
+            gameplayState.fieldWidth = screenWidth;
+            gameplayState.fieldHeight = screenHeight;
             ChangeState(gameplayState);
             gameplayState.Reset();
         }

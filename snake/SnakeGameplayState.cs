@@ -5,22 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using Console_sSnake.shared;
 
-public enum SnakeDir
-{
-    Up, Down, Left, Right
-}
-
 
 namespace Console_sSnake.snake
 {
+    public enum SnakeDir
+    {
+        Up, Down, Left, Right
+    }
     public class SnakeGameplayState : BaseGameState
     {
         const char snakeSymbol = '■';
-        private SnakeDir currentDir = SnakeDir.Right;
+        private SnakeDir currentDir = SnakeDir.Left;
         private float _timeToMove = 0f;
         private List<Cell> _body = new();
-        public int fieldWidth;
-        public int fieldHeight;
+        public int fieldWidth { get; set; }
+        public int fieldHeight { get; set; }
         private struct Cell
         {
             public int X;
@@ -44,16 +43,12 @@ namespace Console_sSnake.snake
             {
                 case SnakeDir.Up:
                     return new Cell(curCell.X, curCell.Y - 1);
-                    break;
                 case SnakeDir.Down:
                     return new Cell(curCell.X, curCell.Y + 1);
-                    break;
                 case SnakeDir.Left:
                     return new Cell(curCell.X - 1, curCell.Y);
-                    break;
                 case SnakeDir.Right:
                     return new Cell(curCell.X + 1, curCell.Y);
-                    break;
             }
             return curCell;
         }
@@ -62,8 +57,8 @@ namespace Console_sSnake.snake
             _body.Clear();
             var middleY = fieldHeight / 2;
             var middleX = fieldWidth / 2;
-            currentDir = SnakeDir.Right;
-            _body.Add(new Cell(middleX + 3, middleY));
+            currentDir = SnakeDir.Left;
+            _body.Add(new (middleX + 2, middleY));
             _timeToMove = 0f;
         }
 
@@ -73,7 +68,7 @@ namespace Console_sSnake.snake
             if (_timeToMove > 0f)
                 return;
             
-            _timeToMove = 1f / 5;
+            _timeToMove = 1f / 4;
             var head = _body[0];
             var nextCell = ShiftTo(head, currentDir);
 
@@ -85,7 +80,7 @@ namespace Console_sSnake.snake
         {
             foreach (var item in _body)
             {
-                renderer.SetPixel(item.X, item.Y, snakeSymbol, 1);
+                renderer.SetPixel(item.X, item.Y, snakeSymbol, 2);
             }
         }
     }

@@ -6,7 +6,7 @@ namespace Console_sSnake
     internal class Program
     {
         const float targetFrameTime = 1f / 60f;
-        static void Main(string[] args)
+        static void Main()
         {
             SnakeGameLogic gameLogic = new SnakeGameLogic();
             
@@ -31,10 +31,7 @@ namespace Console_sSnake
                 gameLogic.DrawNewState(deltaTime, currRenderer);
                 lastFrameTime = frameStartTime;
 
-                if (currRenderer != prevRenderer)
-                {
-                    currRenderer.Render();
-                }
+                if (!currRenderer.Equals(prevRenderer)) currRenderer.Render();
 
                 var tmp = prevRenderer;
                 prevRenderer = currRenderer;

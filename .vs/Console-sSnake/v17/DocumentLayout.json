@@ -1,7 +1,36 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Code\\dev\\Console-sSnake\\",
-  "Documents": [],
+  "WorkspaceRootPath": "E:\\dev\\C#\\Console-sSnake\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|e:\\dev\\c#\\console-ssnake\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|e:\\dev\\c#\\console-ssnake\\snake\\snakegameplaystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|solutionrelative:snake\\snakegameplaystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|e:\\dev\\c#\\console-ssnake\\snake\\snakegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|solutionrelative:snake\\snakegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|e:\\dev\\c#\\console-ssnake\\shared\\consolerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|solutionrelative:shared\\consolerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|e:\\dev\\c#\\console-ssnake\\shared\\consoleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|solutionrelative:shared\\consoleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|e:\\dev\\c#\\console-ssnake\\shared\\basegamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|solutionrelative:shared\\basegamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|e:\\dev\\c#\\console-ssnake\\shared\\basegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5FF9B495-9336-4592-A948-EF349B8CEDF8}|Console-sSnake.csproj|solutionrelative:shared\\basegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +47,97 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConsoleRenderer.cs",
+              "DocumentMoniker": "E:\\dev\\C#\\Console-sSnake\\shared\\ConsoleRenderer.cs",
+              "RelativeDocumentMoniker": "shared\\ConsoleRenderer.cs",
+              "ToolTip": "E:\\dev\\C#\\Console-sSnake\\shared\\ConsoleRenderer.cs",
+              "RelativeToolTip": "shared\\ConsoleRenderer.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T18:35:34.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConsoleInput.cs",
+              "DocumentMoniker": "E:\\dev\\C#\\Console-sSnake\\shared\\ConsoleInput.cs",
+              "RelativeDocumentMoniker": "shared\\ConsoleInput.cs",
+              "ToolTip": "E:\\dev\\C#\\Console-sSnake\\shared\\ConsoleInput.cs",
+              "RelativeToolTip": "shared\\ConsoleInput.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAcwCIAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T18:33:06.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseGameState.cs",
+              "DocumentMoniker": "E:\\dev\\C#\\Console-sSnake\\shared\\BaseGameState.cs",
+              "RelativeDocumentMoniker": "shared\\BaseGameState.cs",
+              "ToolTip": "E:\\dev\\C#\\Console-sSnake\\shared\\BaseGameState.cs",
+              "RelativeToolTip": "shared\\BaseGameState.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T18:32:43.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseGameLogic.cs",
+              "DocumentMoniker": "E:\\dev\\C#\\Console-sSnake\\shared\\BaseGameLogic.cs",
+              "RelativeDocumentMoniker": "shared\\BaseGameLogic.cs",
+              "ToolTip": "E:\\dev\\C#\\Console-sSnake\\shared\\BaseGameLogic.cs",
+              "RelativeToolTip": "shared\\BaseGameLogic.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAowBsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T18:30:37.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SnakeGameplayState.cs",
+              "DocumentMoniker": "E:\\dev\\C#\\Console-sSnake\\snake\\SnakeGameplayState.cs",
+              "RelativeDocumentMoniker": "snake\\SnakeGameplayState.cs",
+              "ToolTip": "E:\\dev\\C#\\Console-sSnake\\snake\\SnakeGameplayState.cs",
+              "RelativeToolTip": "snake\\SnakeGameplayState.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T18:24:16.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SnakeGameLogic.cs",
+              "DocumentMoniker": "E:\\dev\\C#\\Console-sSnake\\snake\\SnakeGameLogic.cs",
+              "RelativeDocumentMoniker": "snake\\SnakeGameLogic.cs",
+              "ToolTip": "E:\\dev\\C#\\Console-sSnake\\snake\\SnakeGameLogic.cs",
+              "RelativeToolTip": "snake\\SnakeGameLogic.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAwwD0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T18:23:12.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\dev\\C#\\Console-sSnake\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\dev\\C#\\Console-sSnake\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwB4AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T18:22:31.038Z",
+              "EditorCaption": ""
             }
           ]
         }

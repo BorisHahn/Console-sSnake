@@ -8,10 +8,10 @@ namespace Console_sSnake.shared
 {
     public abstract class BaseGameLogic : IArrowListener
     {
-        protected BaseGameState currentState;
-        private float _time;
-        protected int _screenWidth;
-        protected int _screenHeight;
+        protected BaseGameState? currentState { get; private set; }
+        protected float time { get; private set; }
+        protected int screenWidth { get; private set; }
+        protected int screenHeight { get; private set; }
         public abstract void OnArrowDown();
 
         public abstract void OnArrowLeft();
@@ -28,7 +28,7 @@ namespace Console_sSnake.shared
             consoleInput.Subscribe(this);
         }
 
-        public void ChangeState(BaseGameState baseGameState)
+        public void ChangeState(BaseGameState? baseGameState)
         {
             currentState?.Reset();      
             currentState = baseGameState;
@@ -36,12 +36,12 @@ namespace Console_sSnake.shared
 
         public void DrawNewState(float deltaTime, ConsoleRenderer renderer)
         {
-            _time += deltaTime;
-            _screenHeight = renderer.height;
-            _screenWidth = renderer.width;
+            time += deltaTime;
+            screenHeight = renderer.height;
+            screenWidth = renderer.width;
             currentState?.Update(deltaTime);
             currentState?.Draw(renderer);
-            this.Update(deltaTime);
+            Update(deltaTime);
         }
     }
 }
