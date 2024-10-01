@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Console_sSnake.shared
 {
     public abstract class BaseGameState
@@ -12,5 +13,6 @@ namespace Console_sSnake.shared
         public abstract void Update(float deltaTime);
         public abstract void Reset();
         public abstract void Draw(ConsoleRenderer renderer);
+        public abstract bool IsDone();
     }
 }
