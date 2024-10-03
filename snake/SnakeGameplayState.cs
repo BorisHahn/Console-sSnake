@@ -25,6 +25,8 @@ namespace Console_sSnake.snake
         private List<Cell> _body = new();
         public int fieldWidth { get; set; }
         public int fieldHeight { get; set; }
+        public bool hasWon = false;
+        public int level;
         private struct Cell
         {
             public int X;
@@ -88,6 +90,7 @@ namespace Console_sSnake.snake
             _timeToMove = 0f;
             _apple = new Cell(middleX + 10, middleY + 10);
             gameOver = false;
+            hasWon = false;
         }
 
         public override void Update(float deltaTime)
@@ -95,13 +98,14 @@ namespace Console_sSnake.snake
             _timeToMove -= deltaTime;
             if (_timeToMove > 0f || gameOver)
                 return;
-            
-            _timeToMove = 1f / 4;
+
+            _timeToMove = 1f / (4 + level);
             var head = _body[0];
             var nextCell = ShiftTo(head, currentDir);
             if (nextCell.X == _apple.X && nextCell.Y == _apple.Y)
             {
                 _body.Insert(0, _apple);
+                hasWon = _body.Count >= level + 3;
                 GenerateApple();
                 return;
             }
@@ -117,17 +121,20 @@ namespace Console_sSnake.snake
 
         public override void Draw(ConsoleRenderer renderer)
         {
-            renderer.SetPixel(_apple.X, _apple.Y, circleSymbol, 1);
-            renderer.DrawString($"Score: {_body.Count - 1}", 3, 2, ConsoleColor.White);
+            renderer.DrawString($"Level: {level}", 3, 1, ConsoleColor.Green);
+            renderer.DrawString($"Score: {_body.Count - 1}", 3, 2, ConsoleColor.Green);
+
             foreach (var item in _body)
             {
                 renderer.SetPixel(item.X, item.Y, snakeSymbol, 2);
             }
+            
+            renderer.SetPixel(_apple.X, _apple.Y, circleSymbol, 1);
         }
 
         public override bool IsDone()
         {
-            return gameOver;
+            return gameOver || hasWon;
         }
     }
 }

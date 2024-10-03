@@ -9,13 +9,17 @@ namespace Console_sSnake.snake
 {
     public class SnakeGameLogic : BaseGameLogic
     {
-        SnakeGameplayState gameplayState = new SnakeGameplayState();
-        public override void Update(float deltaTime)
+        private SnakeGameplayState gameplayState = new SnakeGameplayState();
+        private bool newGamePending = false;
+        private int currentLevel = 1;
+        private ShowTextState showTextState = new(2f);
+        
+        private void GotoNextLevel()
         {
-            if (currentState != gameplayState)
-            {
-                GotoGameplay();
-            }
+            currentLevel++;
+            newGamePending = false;
+            showTextState.text = $"Level {currentLevel}";
+            ChangeState(showTextState);
         }
 
         public override void OnArrowUp()
@@ -56,6 +60,7 @@ namespace Console_sSnake.snake
 
         public void GotoGameplay()
         {
+            gameplayState.level = currentLevel;
             gameplayState.fieldWidth = screenWidth;
             gameplayState.fieldHeight = screenHeight;
             ChangeState(gameplayState);
@@ -70,6 +75,39 @@ namespace Console_sSnake.snake
                 ConsoleColor.Blue, 
                 ConsoleColor.Yellow
                 ];
+        }
+
+        public void GoToGameOver()
+        {
+            currentLevel = 0;
+            newGamePending = true;
+            showTextState.text = $"Потрачено!";
+            ChangeState(showTextState);
+        }
+
+        public override void Update(float deltaTime)
+        {
+            if (currentState != null && !currentState.IsDone())
+            {
+                return;
+            }
+            if (currentState == null || currentState == gameplayState && !gameplayState.gameOver)
+            {
+                GotoNextLevel();
+            }
+            else if (currentState == gameplayState && gameplayState.gameOver)
+            {
+                GoToGameOver();
+            }
+            else if (currentState != gameplayState && newGamePending)
+            {
+                GotoNextLevel();
+            }
+            else if (currentState != gameplayState && !newGamePending)
+            {
+                GotoGameplay();
+            }
+            
         }
     }
 }
